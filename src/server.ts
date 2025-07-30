@@ -44,16 +44,13 @@ router.get('/', ctx => {
         
        
         const scenes = [];
+                
+        scenes.push({
+            scene: 2,
+            content_ids: ["CONTENT12589381890"],
+            extra: ""
+        });
         
-        // 模拟重要事件掉落
-        const hasImportantEvent = Math.random() > 0.8;
-        if (hasImportantEvent) {
-            scenes.push({
-                scene: 2,
-                content_ids: ["CONTENT12589381890"],
-                extra: ""
-            });
-        }
         
         const responseBody = {
             err_no: 0,
