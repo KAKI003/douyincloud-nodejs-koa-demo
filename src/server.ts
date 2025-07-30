@@ -27,7 +27,7 @@ router.get('/', ctx => {
             return;
         }
         
-        const secretKey = 'd48d960268bb3dbb2d05cbeeb3ac2c209919d261';
+        const secretKey = 'Tpm12477697026oWa';
         const signatureParams: SignatureParams = { nonce, timestamp, openid, appid };
         const isValidSignature = verifySignature(signature, signatureParams, secretKey);
         if (!isValidSignature) {
@@ -49,7 +49,7 @@ router.get('/', ctx => {
         const hasImportantEvent = Math.random() > 0.8;
         if (hasImportantEvent) {
             scenes.push({
-                scene: 3,
+                scene: 2,
                 content_ids: ["CONTENT12589381890"],
                 extra: ""
             });
