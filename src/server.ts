@@ -7,8 +7,8 @@ const app = new Koa();
 const router = new Router();
 router.get('/', ctx => {
     const now = new Date();
-    const currentHour = now.getHours();
-    ctx.body = `TEST SUCCESS ${now} ${currentHour}`;
+    const utc8Time = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+    ctx.body = `TEST SUCCESS ${utc8Time}`;
 }).get('/api/feed_game/scenes', async (ctx: any) => {
     try {
         const nonce = ctx.query.nonce as string;
@@ -48,9 +48,9 @@ router.get('/', ctx => {
         const scenes = [];
                 
         const now = new Date();
-        const currentHour = now.getHours();
+        const utc8Time = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+        const currentHour = utc8Time.getUTCHours();
         
-        // 只有在中午12点之后才添加scenes
         if (currentHour >= 12) {
             scenes.push({
                 scene: 2,
