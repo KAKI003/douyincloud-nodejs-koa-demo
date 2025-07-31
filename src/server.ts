@@ -6,7 +6,9 @@ import { verifySignature, SignatureParams, getSignature } from './signature';
 const app = new Koa();
 const router = new Router();
 router.get('/', ctx => {
-    ctx.body = `TEST SUCCESS`;
+    const now = new Date();
+    const currentHour = now.getHours();
+    ctx.body = `TEST SUCCESS ${now} ${currentHour}`;
 }).get('/api/feed_game/scenes', async (ctx: any) => {
     try {
         const nonce = ctx.query.nonce as string;
