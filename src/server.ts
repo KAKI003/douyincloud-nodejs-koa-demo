@@ -45,11 +45,17 @@ router.get('/', ctx => {
        
         const scenes = [];
                 
-        scenes.push({
-            scene: 2,
-            content_ids: ["CONTENT12589381890"],
-            extra: ""
-        });
+        const now = new Date();
+        const currentHour = now.getHours();
+        
+        // 只有在中午12点之后才添加scenes
+        if (currentHour >= 12) {
+            scenes.push({
+                scene: 2,
+                content_ids: ["CONTENT12589381890"],
+                extra: ""
+            });
+        }
         
         
         const responseBody = {
