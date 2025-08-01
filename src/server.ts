@@ -47,17 +47,17 @@ router.get('/', ctx => {
        
         const scenes = [];
                 
-        const now = new Date();
-        const utc8Time = new Date(now.getTime() + (8 * 60 * 60 * 1000));
-        const currentHour = utc8Time.getUTCHours();
+        // const now = new Date();
+        // const utc8Time = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+        // const currentHour = utc8Time.getUTCHours();
         
-        if (currentHour >= 12) {
-            scenes.push({
-                scene: 2,
-                content_ids: ["CONTENT12589381890"],
-                extra: ""
-            });
-        }
+        // if (currentHour >= 12) {
+        scenes.push({
+            scene: 2,
+            content_ids: ["CONTENT12589381890"],
+            extra: ""
+        });
+        // }
         
         
         const responseBody = {
